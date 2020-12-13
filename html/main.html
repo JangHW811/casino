@@ -13,9 +13,7 @@
   </head>
   <script>
     function animationFont(fontArea) {
-      console.log(fontArea, fontArea.find('.whiteLargeFont').children('div'));
       fontArea.find('.whiteLargeFont > div').each(function (index, item) {
-        console.log('item', item);
         $(item)
           .addClass('showStepFont')
           .css({ 'animation-delay': index / 5 + 's' });
