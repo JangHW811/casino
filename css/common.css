@@ -1,0 +1,16 @@
+/*common*******************************************************STR*/
+body,
+button,
+input,
+textarea,
+selection {
+  font-family: 'NanumSquareOTFR';
+  color: #555;
+  background: #090804;
+  word-break: keep-all;
+  margin: 0px;
+}
+
+button {
+  cursor: pointer;
+}

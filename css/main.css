@@ -1,0 +1,142 @@
+.header {
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+}
+.headerContents {
+  background: inherit;
+  top: 0;
+  display: flex;
+  height: 88px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 10vw;
+  position: relative;
+}
+
+.header .leftContainer {
+  display: flex;
+  left: 0;
+  position: absolute;
+}
+
+.header .title {
+  opacity: 0.7;
+  font-family: ghanachoco;
+  font-size: 29.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -1.48px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header .leftContainer p {
+  margin-right: 44px;
+  font-family: Futura;
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.15px;
+  text-align: left;
+  color: #c88b60;
+}
+
+.header .leftContainer .overview {
+  font-family: Futura;
+}
+
+.header .rightContainer {
+  right: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .rightContainer input {
+  width: 134px;
+  height: 30px;
+  border-radius: 2px;
+  border: solid 1px #c88b60;
+  padding: 0px 10px;
+}
+.header .rightContainer .inputContainer {
+  margin-right: 18px;
+}
+.header .rightContainer .buttonContainer {
+  display: flex;
+}
+
+.header .rightContainer input::placeholder {
+  color: #b49c82;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #865d3f;
+}
+
+.header .rightContainer button {
+  width: 97px;
+  height: 30px;
+  border: solid 1px #c88b60;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7px;
+}
+.header .rightContainer .login {
+  background-color: #87552d;
+  color: #c88b60;
+}
+.header .rightContainer .join {
+  color: #c88b60;
+}
+.banner1 {
+  position: relative;
+}
+
+.banner1 > img {
+  width: 100vw;
+}
+.banner1 .fontContainer {
+  background: inherit;
+  position: absolute;
+  left: 21vw;
+  top: 38%;
+}
+.banner1 .whiteLargeFont {
+  font-family: Roboto;
+  font-size: 58px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.58px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.banner1 .goldSmallFont {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #bb9364;
+  max-width: 33.5vw;
+}
