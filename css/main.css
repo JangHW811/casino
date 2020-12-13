@@ -278,7 +278,7 @@
 }
 
 .bottomContainer {
-  padding: 100px 303px;
+  padding: 100px 10vw;
   background: url('../images/bottom-background.png') no-repeat;
   background-size: cover;
   position: relative;
