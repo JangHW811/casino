@@ -11,6 +11,7 @@ selection {
   margin: 0px;
 }
 
-button {
+button,
+a {
   cursor: pointer;
 }

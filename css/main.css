@@ -33,7 +33,7 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.header .leftContainer p {
+.header .leftContainer a {
   margin-right: 44px;
   font-family: Futura;
   font-size: 15px;
@@ -126,6 +126,25 @@
   letter-spacing: -0.58px;
   text-align: left;
   color: #ffffff;
+  transform: translate(0px, 30px);
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideFont {
+  0% {
+    transform: translate(0px, 30px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes fadeFont {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .banner1 .goldSmallFont {
@@ -139,4 +158,17 @@
   text-align: left;
   color: #bb9364;
   max-width: 33.5vw;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.fadeFont {
+  animation-name: fadeFont;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+.slideFont {
+  animation-name: slideFont;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
