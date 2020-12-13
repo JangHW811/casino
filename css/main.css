@@ -471,3 +471,28 @@
   display: flex;
   align-self: center;
 }
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  z-index: 11;
+  top: 0;
+  display: none;
+}
+
+body.filter {
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  top: 0;
+}
