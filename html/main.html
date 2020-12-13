@@ -12,13 +12,22 @@
     <link rel="stylesheet" href="../css/slick-theme.css" />
   </head>
   <script>
-    function animationFont(fontArea) {
-      fontArea.find('.whiteLargeFont > div').each(function (index, item) {
+    function animationStart(animationArea) {
+      animationArea.find('.bannerLargeFont > div').each(function (index, item) {
+        console.log('index', index, item);
         $(item)
           .addClass('showStepFont')
           .css({ 'animation-delay': index / 5 + 's' });
       });
-      fontArea.find('.goldSmallFont').addClass('fadeFont');
+      animationArea.find('.bannerSmallFont').addClass('fadeFont');
+      animationArea.find('.dice1').addClass('dice1Animation');
+      animationArea.find('.dice2').addClass('dice2Animation');
+    }
+    function animationInit(animationArea) {
+      animationArea.find('.bannerLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
+      animationArea.find('.bannerSmallFont').removeClass('fadeFont');
+      animationArea.find('.dice1').removeClass('dice1Animation');
+      animationArea.find('.dice2').removeClass('dice2Animation');
     }
     $(document).ready(function () {
       var swiper = $('.swiper-wrapper').slick({
@@ -34,16 +43,17 @@
 
       swiper.on('afterChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlider = $(slick.$slides[currentSlide]);
-        animationFont(activeSlider);
+        console.log('afterChange', activeSlider);
+        animationStart(activeSlider);
       });
 
       swiper.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlider = $(slick.$slides[currentSlide]);
-        activeSlider.find('.whiteLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
-        activeSlider.find('.goldSmallFont').removeClass('fadeFont');
+        console.log('beforeChange', activeSlider);
+        animationInit(activeSlider);
       });
 
-      animationFont($('.banner1 > .fontContainer'));
+      animationStart($('.banner1'));
     });
   </script>
   <body>
@@ -70,10 +80,10 @@
       </header>
       <section class="section">
         <div class="swiper-wrapper">
-          <div class="swiper-slide banner1">
+          <div class="swiper-slide banner banner1">
             <img src="../images/banner1.png" />
             <div class="fontContainer">
-              <div class="whiteLargeFont">
+              <div class="bannerLargeFont">
                 <!-- PARADISE CASINO -->
                 <div>P</div>
                 <div>A</div>
@@ -91,17 +101,37 @@
                 <div>N</div>
                 <div>O</div>
               </div>
-              <div class="goldSmallFont fadeFont">
+              <div class="bannerSmallFont fadeFont">
                 품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
                 색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
               </div>
             </div>
           </div>
-          <div class="swiper-slide banner1">
-            <img src="../images/banner1.png" />
+          <div class="swiper-slide banner banner2">
+            <img src="../images/banner2.png" />
+            <img src="../images/dice.png" class="dice1" />
+            <img src="../images/dice2.png" class="dice2" />
+            <img src="../images/diceShadow.png" class="diceShadow" />
             <div class="fontContainer">
-              <div class="whiteLargeFont">PARADISE CASINO</div>
-              <div class="goldSmallFont">
+              <div class="bannerLargeFont">
+                <!-- PARADISE CASINO -->
+                <div>P</div>
+                <div>A</div>
+                <div>R</div>
+                <div>A</div>
+                <div>D</div>
+                <div>I</div>
+                <div>S</div>
+                <div>E</div>
+                <div>&nbsp;</div>
+                <div>C</div>
+                <div>A</div>
+                <div>S</div>
+                <div>I</div>
+                <div>N</div>
+                <div>O</div>
+              </div>
+              <div class="bannerSmallFont">
                 품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
                 색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
               </div>

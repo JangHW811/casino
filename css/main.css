@@ -2,7 +2,7 @@
   z-index: 10;
   position: fixed;
   width: 100%;
-  /* background: #090804; */
+  background: rgba(9, 8, 4, 0.3);
 }
 .headerContents {
   background: inherit;
@@ -104,18 +104,18 @@
 .header .rightContainer .join {
   color: #c88b60;
 }
-.banner1 {
+.banner {
   position: relative;
 }
 
-.banner1 > img {
+.banner > img {
   width: 100%;
 }
 .banner1 .fontContainer {
   left: 13vw;
   top: 38%;
 }
-.banner1 .whiteLargeFont {
+.banner1 .bannerLargeFont {
   display: flex;
   font-family: Roboto;
   font-size: 58px;
@@ -128,9 +128,143 @@
   color: #ffffff;
 }
 
-.banner1 .whiteLargeFont div {
+.banner1 .bannerLargeFont div {
   animation-fill-mode: forwards;
   transform: scale(0);
+}
+.banner1 .bannerSmallFont {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #bb9364;
+  max-width: 33.5vw;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.banner2 .fontContainer {
+  left: 13vw;
+  top: 38%;
+}
+.banner2 .bannerLargeFont {
+  display: flex;
+  font-family: Roboto;
+  font-size: 58px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.58px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.banner2 .bannerLargeFont div {
+  animation-fill-mode: forwards;
+  transform: scale(0);
+}
+.banner2 .bannerSmallFont {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #ffffff;
+  max-width: 33.5vw;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes dice1Animation {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-90%);
+  }
+  30% {
+    transform: translateY(30%) rotate3d(1, 1, 1, -30deg);
+    /* transform: rotate3d(1, 1, 1, -45deg); */
+  }
+  33% {
+    transform: translateY(26%) rotate3d(1, 1, 1, 30deg);
+    /* transform: rotate3d(1, 1, 1, -45deg); */
+  }
+  50% {
+    transform: translateY(0);
+  }
+  57% {
+    transform: translateY(0%);
+  }
+  64% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes dice2Animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-90%, -90%);
+  }
+  30% {
+    transform: translate(30%, 30%) rotate3d(1, 1, 1, -10deg);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  57% {
+    transform: translate(0, 0);
+  }
+  64% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.banner2 .dice1 {
+  z-index: 10;
+  width: 17vw;
+  position: absolute;
+  top: 47%;
+  right: 24vw;
+}
+.banner2 .dice2 {
+  width: 9vw;
+  position: absolute;
+  top: 27%;
+  right: 19vw;
+}
+.banner2 .diceShadow {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.dice1Animation {
+  animation-timing-function: ease-in-out;
+  animation-name: dice1Animation;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+}
+.dice2Animation {
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-name: dice2Animation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
 
 @keyframes showStepFont {
@@ -160,21 +294,6 @@
     transform: scale(1.5);
   }
 }
-.banner1 .goldSmallFont {
-  margin-top: 40px;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.88;
-  letter-spacing: -0.4px;
-  text-align: left;
-  color: #bb9364;
-  max-width: 33.5vw;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
 .fadeFont {
   animation-name: fadeFont;
   animation-duration: 4s;
@@ -242,11 +361,11 @@
 }
 
 .rollingGameContainer img {
-  right: 6vw;
+  right: 3vw;
 }
 
 .rollingGameContainer .fontContainer {
-  left: 13vw;
+  left: 10vw;
   top: 104px;
 }
 
@@ -255,7 +374,7 @@
 }
 
 .casinoMgmEventContainer img {
-  left: 10vw;
+  left: 3vw;
 }
 
 .casinoMgmEventContainer .fontContainer {
@@ -273,7 +392,7 @@
 }
 
 .rouletteContainer .fontContainer {
-  left: 13vw;
+  left: 10vw;
   top: 104px;
 }
 
