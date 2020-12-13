@@ -111,12 +111,11 @@
   width: 100vw;
 }
 .banner1 .fontContainer {
-  background: inherit;
-  position: absolute;
   left: 21vw;
   top: 38%;
 }
 .banner1 .whiteLargeFont {
+  display: flex;
   font-family: Roboto;
   font-size: 58px;
   font-weight: 500;
@@ -126,16 +125,21 @@
   letter-spacing: -0.58px;
   text-align: left;
   color: #ffffff;
-  transform: translate(0px, 30px);
-  animation-fill-mode: forwards;
 }
 
-@keyframes slideFont {
+.banner1 .whiteLargeFont div {
+  animation-fill-mode: forwards;
+  transform: scale(0);
+}
+
+@keyframes showStepFont {
   0% {
-    transform: translate(0px, 30px);
+    transform: scale(0);
+    opacity: 0;
   }
   100% {
-    transform: translate(0px, 0px);
+    transform: scale(1);
+    opacity: 1;
   }
 }
 @keyframes fadeFont {
@@ -164,11 +168,65 @@
 
 .fadeFont {
   animation-name: fadeFont;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
 }
-.slideFont {
-  animation-name: slideFont;
-  animation-duration: 2s;
+.showStepFont {
+  animation-name: showStepFont;
+  animation-duration: 0.2s;
   animation-iteration-count: 1;
+}
+
+.rollingGameContainer {
+  position: relative;
+  background-color: #1e170e;
+  height: 372px;
+  padding-top: 53px;
+}
+
+.rollingGameContainer img {
+  position: absolute;
+  right: 6vw;
+}
+
+.rollingGameContainer .fontContainer {
+  left: 21vw;
+  top: 104px;
+}
+
+.rollingGameContainer .goldSmallFont {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: 9px;
+  text-align: left;
+  color: #9b805e;
+}
+.rollingGameContainer .goldLargeFont {
+  margin-top: 55px;
+  font-family: Roboto;
+  font-size: 58px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 1.45px;
+  text-align: left;
+  color: #bb9364;
+}
+
+.rollingGameContainer .whiteSmallFont {
+  margin-top: 37px;
+  font-family: NanumSquareOTFR;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  text-align: left;
+  color: #fff8f0;
 }

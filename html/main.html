@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="../css/slick-theme.css" />
   </head>
   <script>
+    function animationFont(fontArea) {
+      console.log(fontArea, fontArea.find('.whiteLargeFont').children('div'));
+      fontArea.find('.whiteLargeFont > div').each(function (index, item) {
+        console.log('item', item);
+        $(item)
+          .addClass('showStepFont')
+          .css({ 'animation-delay': index / 30 + 's' });
+      });
+      fontArea.find('.goldSmallFont').addClass('fadeFont');
+    }
     $(document).ready(function () {
       var swiper = $('.swiper-wrapper').slick({
         arrows: false,
@@ -26,16 +36,16 @@
 
       swiper.on('afterChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlider = $(slick.$slides[currentSlide]);
-        console.log(slick, slick.$slides, activeSlider);
-        activeSlider.find('.whiteLargeFont').addClass('slideFont');
-        activeSlider.find('.goldSmallFont').addClass('fadeFont');
+        animationFont(activeSlider);
       });
 
       swiper.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlider = $(slick.$slides[currentSlide]);
-        activeSlider.find('.whiteLargeFont').removeClass('slideFont');
+        activeSlider.find('.whiteLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
         activeSlider.find('.goldSmallFont').removeClass('fadeFont');
       });
+
+      animationFont($('.banner1 > .fontContainer'));
     });
   </script>
   <body>
@@ -65,7 +75,24 @@
           <div class="swiper-slide banner1">
             <img src="../images/banner1.png" />
             <div class="fontContainer">
-              <div class="whiteLargeFont slideFont">PARADISE CASINO</div>
+              <div class="whiteLargeFont">
+                <!-- PARADISE CASINO -->
+                <div>P</div>
+                <div>A</div>
+                <div>R</div>
+                <div>A</div>
+                <div>D</div>
+                <div>I</div>
+                <div>S</div>
+                <div>E</div>
+                <div>&nbsp;</div>
+                <div>C</div>
+                <div>A</div>
+                <div>S</div>
+                <div>I</div>
+                <div>N</div>
+                <div>O</div>
+              </div>
               <div class="goldSmallFont fadeFont">
                 품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
                 색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
@@ -81,6 +108,14 @@
                 색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
               </div>
             </div>
+          </div>
+        </div>
+        <div class="rollingGameContainer">
+          <img src="../images/rollingGame.png" />
+          <div class="fontContainer">
+            <div class="goldSmallFont">PARADAISE CITY CASINO</div>
+            <div class="goldLargeFont">ROLLING GAME</div>
+            <div class="whiteSmallFont">해외거주 고객 전용 롤링 게임 안내</div>
           </div>
         </div>
       </section>

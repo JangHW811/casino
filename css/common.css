@@ -15,3 +15,11 @@ button,
 a {
   cursor: pointer;
 }
+.fontContainer {
+  background: unset;
+  position: absolute;
+}
+
+div {
+  box-sizing: border-box;
+}
