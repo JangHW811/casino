@@ -30,6 +30,7 @@
         activeSlider.find('.whiteLargeFont').addClass('slideFont');
         activeSlider.find('.goldSmallFont').addClass('fadeFont');
       });
+
       swiper.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlider = $(slick.$slides[currentSlide]);
         activeSlider.find('.whiteLargeFont').removeClass('slideFont');
