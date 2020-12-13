@@ -2,6 +2,7 @@
   z-index: 10;
   position: fixed;
   width: 100vw;
+  background: #110f0c;
 }
 .headerContents {
   background: inherit;
@@ -111,7 +112,7 @@
   width: 100vw;
 }
 .banner1 .fontContainer {
-  left: 21vw;
+  left: 13vw;
   top: 38%;
 }
 .banner1 .whiteLargeFont {
@@ -151,6 +152,14 @@
   }
 }
 
+@keyframes bannerScale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
 .banner1 .goldSmallFont {
   margin-top: 40px;
   font-size: 16px;
@@ -176,25 +185,7 @@
   animation-duration: 0.2s;
   animation-iteration-count: 1;
 }
-
-.rollingGameContainer {
-  position: relative;
-  background-color: #1e170e;
-  height: 372px;
-  padding-top: 53px;
-}
-
-.rollingGameContainer img {
-  position: absolute;
-  right: 6vw;
-}
-
-.rollingGameContainer .fontContainer {
-  left: 21vw;
-  top: 104px;
-}
-
-.rollingGameContainer .goldSmallFont {
+.goldSmallFont {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 500;
@@ -205,7 +196,7 @@
   text-align: left;
   color: #9b805e;
 }
-.rollingGameContainer .goldLargeFont {
+.goldLargeFont {
   margin-top: 55px;
   font-family: Roboto;
   font-size: 58px;
@@ -218,7 +209,7 @@
   color: #bb9364;
 }
 
-.rollingGameContainer .whiteSmallFont {
+.whiteSmallFont {
   margin-top: 37px;
   font-family: NanumSquareOTFR;
   font-size: 20px;
@@ -229,4 +220,57 @@
   letter-spacing: -0.5px;
   text-align: left;
   color: #fff8f0;
+}
+.smallBanner {
+  height: 372px;
+  position: relative;
+}
+.smallBanner img {
+  animation-fill-mode: forwards;
+  position: absolute;
+}
+.smallBanner img:hover {
+  animation-name: bannerScale;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.rollingGameContainer {
+  background-color: #1e170e;
+}
+
+.rollingGameContainer img {
+  right: 6vw;
+}
+
+.rollingGameContainer .fontContainer {
+  left: 13vw;
+  top: 104px;
+}
+
+.casinoMgmEventContainer {
+  background-color: #110f0c;
+}
+
+.casinoMgmEventContainer img {
+  left: 10vw;
+}
+
+.casinoMgmEventContainer .fontContainer {
+  right: 17vw;
+  top: 104px;
+}
+
+.rouletteContainer {
+  background-color: #423221;
+  padding-top: 49px;
+}
+
+.rouletteContainer img {
+  right: 6vw;
+}
+
+.rouletteContainer .fontContainer {
+  left: 13vw;
+  top: 104px;
 }
