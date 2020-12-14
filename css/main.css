@@ -5,7 +5,7 @@
   background: rgba(9, 8, 4, 0.3);
 }
 .headerContents {
-  background: inherit;
+  background: unset;
   top: 0;
   display: flex;
   height: 88px;
@@ -476,18 +476,14 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
   z-index: 11;
   top: 0;
   display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-body.filter {
+#root.filter {
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
@@ -495,4 +491,335 @@ body.filter {
   -ms-filter: blur(10px);
   filter: blur(10px);
   top: 0;
+}
+
+.mask .popupContainer::-webkit-scrollbar {
+  width: 10px;
+}
+.mask .popupContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(127, 87, 60, 0.5);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.mask .popupContainer::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+.mask .popupContainer {
+  display: none;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.mask .popup {
+  position: relative;
+  width: 65vw;
+  background-image: url('../images/joinBg.png');
+  background-color: #070707;
+  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right -2vw bottom 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 15vw;
+}
+
+.mask .popup .btnClose {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+.mask .popup .title {
+  margin-top: 68px;
+}
+
+.mask .popup .goldTitle {
+  margin-top: 53px;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.8;
+  letter-spacing: -0.75px;
+  text-align: center;
+  color: #c88b60;
+}
+
+.joinPopup .contents {
+  margin: 93px 0 68px;
+  width: 100%;
+}
+.popup .inputContainer {
+  display: flex;
+  flex: 1;
+  position: relative;
+  margin-top: 36px;
+}
+.popup .inputContainer .name {
+  padding-top: 8px;
+  flex-basis: 30%;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #c88b60;
+}
+.popup .inputContainer .value {
+  flex-basis: 70%;
+}
+
+.popup .inputContainer .value input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #7f573c;
+}
+
+.popup .inputContainer .value textarea::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #7f573c;
+}
+.popup .inputContainer .iconCheck {
+  position: absolute;
+  right: 1px;
+  top: 10px;
+}
+.popup .inputContainer .phoneCheckBtn {
+  width: 105px;
+  height: 30px;
+  position: absolute;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: -0.75px;
+  color: #ffffff;
+  right: 3px;
+  top: 8px;
+}
+.popup .inputContainer .value input {
+  box-sizing: border-box;
+  padding: 8px;
+  font-family: Roboto;
+  font-size: 20.5px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.21px;
+  text-align: left;
+  color: #ffffff;
+  border: 0px;
+  background: unset;
+  border-bottom: 2px solid rgba(200, 139, 96, 0.6);
+  width: 100%;
+}
+.popup .inputContainer .value textarea {
+  height: 162px;
+  box-sizing: border-box;
+  padding: 8px;
+  font-family: Roboto;
+  font-size: 20.5px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.21px;
+  text-align: left;
+  color: #ffffff;
+  border: 0px;
+  background: unset;
+  border: 2px solid rgba(200, 139, 96, 0.6);
+  width: 100%;
+}
+
+.popup .inputContainer .value .redMessage {
+  margin-top: 9px;
+  font-family: NanumSquareOTFR;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1em;
+  letter-spacing: -0.33px;
+  text-align: left;
+  color: #fc5356;
+}
+.popup .goldButton {
+  border-radius: 2px;
+  background-color: #87552d;
+  color: #ffffff;
+  border: 0px;
+}
+
+.popup .submitBtn {
+  width: 288px;
+  height: 56px;
+  margin: 75px 39px 46px 64px;
+  padding: 19px 114px 19px 113px;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.89;
+  letter-spacing: -0.9px;
+}
+
+.mask .depositPopup .popup {
+  padding: 0 3vw;
+}
+
+.popup .topAreaContainer {
+  display: flex;
+  margin-top: 54px;
+  width: 100%;
+}
+.popup .topAreaContainer img {
+  object-fit: contain;
+}
+.popup .topAreaContainer .topItem {
+  border: solid 1px #7b563c;
+  padding: 45px 37px;
+  margin-left: 26px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.popup .topAreaContainer .topItem .text {
+  margin-top: 27px;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: -0.33px;
+  text-align: center;
+  color: #b77f57;
+}
+.popup .topAreaContainer .topItem:first-child {
+  margin-left: unset;
+}
+
+.popup .goldAreaContainer {
+  margin-top: 35px;
+  padding: 25px;
+  background-color: rgba(127, 87, 60, 0.5);
+}
+.popup .goldText1 {
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: -0.45px;
+  text-align: center;
+  color: #c88b60;
+}
+.popup .goldText2 {
+  margin-top: 23px;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: -0.38px;
+  text-align: center;
+  color: #c88b60;
+}
+.popup .goldText3 {
+  margin: 9px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #7f573c;
+}
+
+.depositPopup .contents {
+  margin-top: 136px;
+  width: 75%;
+}
+.depositPopup .inputContainer .name {
+  flex-basis: 20%;
+}
+
+.depositPopup .inputContainer .value {
+  flex-basis: 30%;
+}
+
+.depositPopup .inputContainer .subContainer {
+  flex-basis: 50%;
+}
+.depositPopup .inputContainer .buttonContainer {
+  display: flex;
+  margin: 9px;
+}
+.depositPopup .inputContainer .goldButton {
+  height: 30px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: 0.38px;
+  color: #ffffff;
+  flex: 1;
+}
+.depositPopup .inputContainer .blackButton {
+  margin-right: 10px;
+  height: 30px;
+  border-radius: 2px;
+  border: solid 1px #c88b60;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: -0.75px;
+  color: #c88b60;
+  flex: 1;
+}
+.depositPopup .inputContainer .textareaContainer {
+  flex-basis: 80%;
+}
+
+.depositPopup .bottomTextContainer {
+  width: 100%;
+  margin: 186px 0 90px;
+  padding-top: 16px;
+  border-top: 1px solid #7b563c;
+}
+
+.depositPopup .bottomSmallText {
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: -0.33px;
+  text-align: left;
+  color: #b77f57;
 }

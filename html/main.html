@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/slick-theme.css" />
   </head>
   <script>
+    //애니메이션 시작
     function animationStart(animationArea) {
       animationArea.find('.bannerLargeFont > div').each(function (index, item) {
         $(item)
@@ -22,13 +23,16 @@
       animationArea.find('.dice1').addClass('dice1Animation');
       animationArea.find('.dice2').addClass('dice2Animation');
     }
+    //애니메이션 초기화
     function animationInit(animationArea) {
       animationArea.find('.bannerLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
       animationArea.find('.bannerSmallFont').removeClass('fadeFont');
       animationArea.find('.dice1').removeClass('dice1Animation');
       animationArea.find('.dice2').removeClass('dice2Animation');
     }
+
     $(document).ready(function () {
+      //스와이퍼 초기세팅
       var swiper = $('.swiper-wrapper').slick({
         arrows: false,
         infinite: true,
@@ -53,7 +57,27 @@
       });
 
       animationStart($('.banner1'));
+      showDeposit();
     });
+
+    function showPopupMask() {
+      $('#root').addClass('filter');
+      $('.mask').css({ display: 'flex' });
+    }
+
+    function closePopup(pop) {
+      $(pop).closest('.mask').hide().find('.popupContainer').hide();
+      $('#root').removeClass('filter');
+    }
+
+    function showJoin() {
+      showPopupMask();
+      $('.joinPopup').show();
+    }
+    function showDeposit() {
+      showPopupMask();
+      $('.depositPopup').show();
+    }
   </script>
   <body>
     <article id="root">
@@ -71,8 +95,8 @@
               <input placeholder="password" />
             </div>
             <div class="buttonContainer">
-              <button class="login">로그인</button>
-              <button class="join" onclick="showLogin();">회원가입</button>
+              <button class="login" onclick="showDeposit();">로그인</button>
+              <button class="join" onclick="showJoin();">회원가입</button>
             </div>
           </div>
         </div>
@@ -210,10 +234,163 @@
       </section>
     </article>
     <div class="mask">
-      <div class="joinPopup">
-        <a><img src="" /></a>
+      <div class="popupContainer joinPopup">
+        <div class="popup">
+          <!-- <img src="../images/joinBg.png" /> -->
+          <a class="btnClose" onclick="closePopup(this);"><img src="../images/btn_close.png" /></a>
+          <div class="title">바이든</div>
+          <article class="contents">
+            <div class="inputContainer mt0">
+              <div class="name">아이디 *</div>
+              <div class="value">
+                <input placeholder="아이디를 입력해주세요." />
+                <div class="redMessage">존재하지 않는 아이디 입니다.</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">비밀번호 *</div>
+              <div class="value">
+                <input type="password" placeholder="비밀번호는 6-16자리 입니다." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">비밀번호 재입력 *</div>
+              <div class="value">
+                <img src="../images/icon_check.png" class="iconCheck" />
+                <input type="password" placeholder="비밀번호는 6-16자리 입니다." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">이름 *</div>
+              <div class="value">
+                <input placeholder="이름을 입력해주세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">전화번호 *</div>
+              <div class="value">
+                <button class="phoneCheckBtn goldButton">핸드폰 인증</button>
+                <input placeholder="전화번호를 입력해주세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">은행명 *</div>
+              <div class="value">
+                <input placeholder="은행명을 입력해주세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">계좌번호 *</div>
+              <div class="value">
+                <input placeholder="'-'없이 숫자만 입력." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">추천인</div>
+              <div class="value">
+                <input placeholder="추천인이 없는 경우 비워두십시오." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+          </article>
+          <button class="submitBtn goldButton">회원가입</button>
+        </div>
       </div>
-      <div class="joinPopup"></div>
+      <div class="depositPopup popupContainer">
+        <div class="popup">
+          <a class="btnClose" onclick="closePopup(this);"><img src="../images/btn_close.png" /></a>
+          <div class="goldTitle">입금신청</div>
+          <div class="topAreaContainer">
+            <div class="topItem">
+              <img src="../images/doNotFight.png" />
+              <div class="text">
+                다른 플레이어와의 분쟁이 예상될 경우, 카지노 관리자에게 알려 분쟁을 막고 해결할 수 있도록 해주시기 바랍니다.
+              </div>
+            </div>
+            <div class="topItem">
+              <img src="../images/doNotDrink.png" />
+              <div class="text">
+                지나친 알코올 섭취 혹은 분쟁으로 다른 고객에게 피해를 주거나 줄 수 있다고 판단될 경우 카지노 출입자격에 제한을
+                받을 수 있습니다.
+              </div>
+            </div>
+            <div class="topItem">
+              <img src="../images/doNotSmoke.png" />
+              <div class="text">
+                게임테이블에서의 흡연은 금지되어 있습니다. 별도의 흡연부스를 운영하고 있으니 흡연 시에는 흡연부스를 이용해 주시기
+                바랍니다.
+              </div>
+            </div>
+          </div>
+          <div class="goldAreaContainer">
+            <div class="goldText1">이용안내</div>
+            <div class="goldText2">
+              1포인트는 1원(KRW)의 가치를 가지며, 3,000포인트 이상 적립 시 1포인트 단위로 사용 가능합니다. 파라다이스시티 내 호텔,
+              F&B, 스파, 클럽, 갤러리 등 객실, 식음업장, 레저 시설에서 현금과 동일하게 사용 가능합니다.
+            </div>
+          </div>
+
+          <article class="contents">
+            <div class="inputContainer mt0">
+              <div class="name">게임선택 *</div>
+              <div class="value">
+                <input placeholder="아이디를 입력하세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">전화번호 *</div>
+              <div class="value">
+                <input placeholder="전화번호를 입력하세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+              <div class="subContainer">
+                <div class="goldText3">입력하신 번호로 계좌번호가 발송됩니다.</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">입금금액 *</div>
+              <div class="value">
+                <input placeholder="금액을 입력하세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+              <div class="subContainer">
+                <div class="buttonContainer">
+                  <button class="blackButton">5만원</button>
+                  <button class="blackButton">10만원</button>
+                  <button class="blackButton">15만원</button>
+                  <button class="goldButton">Clear</button>
+                </div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">입금자명 *</div>
+              <div class="value">
+                <input placeholder="이름을 입력하세요." />
+                <div class="redMessage">&nbsp;</div>
+              </div>
+            </div>
+            <div class="inputContainer">
+              <div class="name">남기실말 *</div>
+              <div class="value textareaContainer">
+                <textarea placeholder="남기실말을 입력하세요."></textarea>
+              </div>
+            </div>
+          </article>
+          <button class="goldButton submitBtn">신청완료</button>
+          <div class="bottomTextContainer">
+            <img src="../images/icon_notice.png" />
+            <span class="bottomSmallText">유의사항</span>
+            <div class="bottomSmallText">입장 관련 자세한 사항은 CS팀으로 문의하시기 바랍니다. (T. 032-729-3103)</div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
