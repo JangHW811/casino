@@ -27,3 +27,33 @@ div {
 .mt0 {
   margin-top: 0px !important;
 }
+select {
+  box-sizing: border-box;
+  padding: 8px;
+  font-family: Roboto;
+  font-size: 20.5px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.21px;
+  text-align: left;
+  color: #ffffff;
+  border: 0px;
+  background: unset;
+  border-bottom: 2px solid rgba(200, 139, 96, 0.6);
+  width: 100%;
+  font-family: inherit;
+  background: url('../images/arrow.png') no-repeat 95% 50%;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+option {
+  background: #070707;
+}
+
+select::-ms-expand {
+  display: none;
+}

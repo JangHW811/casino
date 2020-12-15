@@ -633,6 +633,18 @@
   border-bottom: 2px solid rgba(200, 139, 96, 0.6);
   width: 100%;
 }
+.popup .inputContainer .money::before {
+  content: '원';
+  position: absolute;
+  font-family: Roboto;
+  font-size: 20.5px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  color: #ffffff;
+  left: 47%;
+  top: 10px;
+}
 .popup .inputContainer .value textarea {
   height: 162px;
   box-sizing: border-box;
@@ -693,7 +705,7 @@
   width: 100%;
 }
 .popup .topAreaContainer img {
-  object-fit: contain;
+  object-fit: scale-down;
 }
 .popup .topAreaContainer .topItem {
   border: solid 1px #7b563c;
