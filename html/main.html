@@ -32,7 +32,7 @@
     }
 
     $(document).ready(function () {
-      //스와이퍼 초기세팅
+      //   스와이퍼 초기세팅
       var swiper = $('.swiper-wrapper').slick({
         arrows: false,
         infinite: true,
@@ -54,6 +54,17 @@
         var activeSlider = $(slick.$slides[currentSlide]);
         console.log('beforeChange', activeSlider);
         animationInit(activeSlider);
+      });
+
+      var bottomSwiper = $('.bottomContainer').slick({
+        arrows: false,
+        infinite: true,
+        dots: true,
+        on: {
+          afterChange: function (event, slick, currentSlide, nextSlide) {
+            console.log(event, slick, currentSlide, nextSlide);
+          },
+        },
       });
 
       animationStart($('.banner1'));
@@ -140,9 +151,9 @@
           </div>
           <div class="swiper-slide banner banner2">
             <img src="../images/banner2.png" />
-            <img src="../images/dice.png" class="dice1" />
+            <!-- <img src="../images/dice.png" class="dice1" />
             <img src="../images/dice2.png" class="dice2" />
-            <img src="../images/diceShadow.png" class="diceShadow" />
+            <img src="../images/diceShadow.png" class="diceShadow" /> -->
             <div class="fontContainer">
               <div class="bannerLargeFont">
                 <!-- PARADISE CASINO -->
@@ -196,47 +207,53 @@
           </div>
         </div>
         <div class="bottomContainer">
-          <div class="bottomContent">
-            <img src="../images/icon1.png" />
-            <div class="title">공지사항</div>
-            <ul>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-            </ul>
-            <button>more</button>
+          <div>
+            <div class="bottomContent">
+              <img src="../images/icon1.png" />
+              <div class="title">공지사항</div>
+              <ul>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+              </ul>
+              <button>more</button>
+            </div>
           </div>
-          <div class="bottomContent">
-            <img src="../images/icon2.png" />
-            <div class="title">이벤트</div>
-            <ul>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-            </ul>
-            <button>more</button>
+          <div>
+            <div class="bottomContent">
+              <img src="../images/icon2.png" />
+              <div class="title">이벤트</div>
+              <ul>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+              </ul>
+              <button>more</button>
+            </div>
           </div>
-          <div class="bottomContent">
-            <img src="../images/icon3.png" />
-            <div class="title">Q&A</div>
-            <ul>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-              <li>해외거주 고객 전용 롤링 게임 안내</li>
-            </ul>
-            <button>more</button>
+          <div>
+            <div class="bottomContent">
+              <img src="../images/icon3.png" />
+              <div class="title">Q&A</div>
+              <ul>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내 두줄일 경우 두줄일 경우 두줄일 경우 두줄일 경우</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+                <li>해외거주 고객 전용 롤링 게임 안내</li>
+              </ul>
+              <button>more</button>
+            </div>
           </div>
         </div>
       </section>

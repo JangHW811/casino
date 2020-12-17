@@ -1,7 +1,7 @@
 .header {
   z-index: 10;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background: rgba(9, 8, 4, 0.3);
 }
 
@@ -114,7 +114,7 @@
 }
 
 .banner > img {
-  width: 100%;
+  width: 100vw;
 }
 .banner1 .fontContainer {
   left: 13vw;
@@ -405,7 +405,7 @@
   background-size: cover;
   position: relative;
   display: flex;
-  width: 100%;
+  width: 100vw;
 }
 
 .bottomContent {
@@ -413,7 +413,7 @@
   position: relative;
   flex: 1;
   margin-left: 40px;
-  border: solid 1px #e1ded9;
+  border-top: solid 4px #c88b60;
   background-color: rgba(32, 33, 34, 0.3);
   display: flex;
   flex-direction: column;
@@ -843,11 +843,6 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    /* position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column; */
     padding: 20px 0px;
     border-bottom: 1px solid rgb(232, 231, 231, 0.3);
   }
@@ -890,17 +885,36 @@
     margin: 0;
   }
   .headerContents .rightContainer .inputContainer input {
-    width: 23vw;
+    width: 20vw;
   }
   .headerContents .rightContainer .buttonContainer button {
-    width: 13vw;
+    width: 16vw;
   }
 
   .active {
     display: flex !important;
   }
+  .swiper-wrapper {
+    height: 100vh;
+  }
+  .swiper-wrapper.slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+
+  .swiper-wrapper .slick-dots {
+    bottom: 0;
+  }
+
+  .banner img {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .banner .fontContainer {
+    width: 100vw;
+  }
   .banner1 .fontContainer {
-    left: 6vw;
+    padding: 20px;
     top: 55%;
   }
   .banner1 .bannerLargeFont {
@@ -924,5 +938,149 @@
     letter-spacing: -0.33px;
     text-align: left;
     color: #ffffff;
+  }
+  .banner2 .fontContainer {
+    left: unset;
+    padding: 20px;
+    top: 65%;
+  }
+  .banner2 .bannerLargeFont {
+    display: flex;
+    font-family: Roboto;
+    font-size: 20.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.21px;
+    text-align: left;
+    color: #ffffff;
+  }
+  .banner2 .bannerSmallFont {
+    margin: 19px 0 0 0;
+    max-width: unset;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: -0.33px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .smallBanner {
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .smallBanner .fontContainer {
+    padding-top: 44px;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100vw;
+  }
+
+  .smallBanner .goldSmallFont {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 9px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.78;
+    letter-spacing: 3.6px;
+    color: #867763;
+  }
+  .smallBanner .goldLargeFont {
+    text-align: center;
+    margin-top: 44px;
+    font-family: Roboto;
+    font-size: 29px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.28;
+    letter-spacing: 3.77px;
+    color: #b49c82;
+  }
+  .smallBanner .whiteSmallFont {
+    text-align: center;
+    margin-top: 23px;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: -0.07px;
+    color: #fff8f0;
+    max-width: unset;
+  }
+
+  .rollingGameContainer img {
+    right: 0;
+    position: relative;
+    order: 1;
+    object-fit: contain;
+    margin-top: -38px;
+  }
+
+  .casinoMgmEventContainer img {
+    left: 0;
+    position: relative;
+    order: 1;
+    object-fit: contain;
+    margin-top: -38px;
+  }
+  .rouletteContainer img {
+    right: 0;
+    position: relative;
+    order: 1;
+    object-fit: contain;
+    margin-top: 38px;
+  }
+  .bottomContainer {
+    padding: 100px 0 0 0;
+    background: url('../images/bottom-background.png') no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    width: 100vw;
+  }
+
+  .bottomContainer .bottomContent {
+    padding: 112px 30px 39px;
+    position: relative;
+    flex: 1;
+    border-top: solid 4px #c88b60;
+    background-color: rgba(32, 33, 34, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  .bottomContent > .title {
+    font-size: 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.64;
+    letter-spacing: -0.63px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .bottomContent ul {
+    font-size: 12.5px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.31px;
+    text-align: left;
+    color: #ada59d;
   }
 }
