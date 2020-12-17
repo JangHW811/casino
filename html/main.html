@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#090804" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
@@ -58,6 +58,11 @@
 
       animationStart($('.banner1'));
       //   showDeposit();
+
+      $('.hamberger').on('click', function () {
+        $('header .headerContents').find('.leftContainer').toggleClass('active');
+        $('header .headerContents').find('.rightContainer').toggleClass('active');
+      });
     });
 
     function showPopupMask() {
@@ -82,11 +87,14 @@
   <body>
     <article id="root">
       <header class="header">
+        <img class="hamberger" src="../images/icon_menu.png" />
         <div class="headerContents">
           <div class="leftContainer">
-            <a class="overview">OVERVIEW</a>
-            <a>이용안내</a>
-            <a>게임가이드</a>
+            <ul>
+              <li class="overview">OVERVIEW</li>
+              <li>이용안내</li>
+              <li>게임가이드</li>
+            </ul>
           </div>
           <div class="title">바이든</div>
           <div class="rightContainer">
