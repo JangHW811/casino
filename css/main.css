@@ -1041,11 +1041,11 @@ body::-webkit-scrollbar {
     color: #fff8f0;
     max-width: unset;
   }
-  .smallBanner img:hover {
+  /* .smallBanner img:hover {
     animation-name: unset;
     animation-duration: unset;
     animation-iteration-count: unset;
-  }
+  } */
 
   .smallBanner img {
     left: 0;
