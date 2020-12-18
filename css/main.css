@@ -34,15 +34,14 @@ body::-webkit-scrollbar {
 }
 
 .header .title {
-  opacity: 0.7;
   font-family: Roboto;
-  font-size: 29.5px;
+  font-size: 30px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  letter-spacing: -1.48px;
+  letter-spacing: 1px;
   text-align: left;
-  color: #bb9364;
+  color: #b49c82;
 }
 
 .header .leftContainer ul li {
