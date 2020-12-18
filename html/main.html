@@ -40,7 +40,7 @@
       var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       if (vw <= 640) {
         var bottomSwiper = $('.bottomContainer').slick({
-          arrows: false,
+          arrows: true,
           infinite: true,
           dots: true,
           on: {
@@ -110,8 +110,8 @@
   <body>
     <article id="root">
       <header class="header">
-        <img class="hamberger" src="../images/icon_menu.png" />
         <div class="headerContents">
+          <img class="hamberger mob" src="../images/icon_menu.png" />
           <div class="leftContainer">
             <ul>
               <li class="overview">OVERVIEW</li>

@@ -121,10 +121,10 @@ body::-webkit-scrollbar {
 .banner {
   position: relative;
 }
-.banner img.web {
+.web {
   display: block;
 }
-.banner img.mob {
+.mob {
   display: none;
 }
 
@@ -861,23 +861,30 @@ body::-webkit-scrollbar {
 }
 
 @media screen and (max-width: 640px) {
+  .web {
+    display: none;
+  }
+  .mob {
+    display: block;
+  }
   .header {
     padding: 20px 0px;
     border-bottom: 1px solid rgb(232, 231, 231, 0.3);
   }
 
-  .header > img.hamberger {
+  .header img.hamberger {
     position: absolute;
     left: 20px;
-    top: 30px;
     display: block;
     cursor: pointer;
     width: 20px;
     height: 18px;
   }
   .headerContents {
+    justify-content: center;
     flex-direction: column;
     height: auto;
+    margin: 0;
   }
   .headerContents .title {
     order: 0;
@@ -926,12 +933,6 @@ body::-webkit-scrollbar {
   .banner img {
     height: 100vh;
     object-fit: cover;
-  }
-  .banner img.web {
-    display: none;
-  }
-  .banner img.mob {
-    display: block;
   }
 
   .banner .fontContainer {
