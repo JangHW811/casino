@@ -26,6 +26,7 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   margin: 0 10vw;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .header .leftContainer ul {
@@ -34,22 +35,23 @@ body::-webkit-scrollbar {
 
 .header .title {
   opacity: 0.7;
-  font-family: ghanachoco;
+  font-family: Roboto;
   font-size: 29.5px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: -1.48px;
   text-align: left;
-  color: rgba(255, 255, 255, 0.7);
+  color: #bb9364;
 }
 
 .header .leftContainer ul li {
+  cursor: pointer;
   list-style: none;
   margin-right: 44px;
   font-family: Futura;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: -0.15px;
@@ -120,6 +122,12 @@ body::-webkit-scrollbar {
 .banner {
   position: relative;
 }
+.banner img.web {
+  display: block;
+}
+.banner img.mob {
+  display: none;
+}
 
 .banner > img {
   width: 100vw;
@@ -132,7 +140,7 @@ body::-webkit-scrollbar {
   display: flex;
   font-family: Roboto;
   font-size: 58px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
@@ -168,7 +176,7 @@ body::-webkit-scrollbar {
   display: flex;
   font-family: Roboto;
   font-size: 58px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
@@ -318,7 +326,7 @@ body::-webkit-scrollbar {
 .goldSmallFont {
   font-family: Roboto;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.07;
@@ -330,7 +338,7 @@ body::-webkit-scrollbar {
   margin-top: 55px;
   font-family: Roboto;
   font-size: 58px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
@@ -424,11 +432,14 @@ body::-webkit-scrollbar {
   background-color: rgba(32, 33, 34, 0.3);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 520px;
 }
 .bottomItemWrap {
   flex: 1;
   margin-left: 40px;
+}
+.bottomItemWrap:first-child {
+  margin-left: 0px;
 }
 
 .bottomContent > img {
@@ -468,12 +479,11 @@ body::-webkit-scrollbar {
 .bottomContent button {
   width: 62px;
   height: 26px;
-  margin-top: 73px;
   border: solid 1px #c88b60;
   background-color: rgba(0, 0, 0, 0);
   font-family: Roboto;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 5.28;
@@ -483,6 +493,8 @@ body::-webkit-scrollbar {
   justify-content: center;
   display: flex;
   align-self: center;
+  position: absolute;
+  bottom: 40px;
 }
 
 .mask {
@@ -635,7 +647,7 @@ body::-webkit-scrollbar {
   padding: 8px;
   font-family: Roboto;
   font-size: 20.5px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: -0.21px;
@@ -651,7 +663,7 @@ body::-webkit-scrollbar {
   position: absolute;
   font-family: Roboto;
   font-size: 20.5px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   color: #ffffff;
@@ -664,7 +676,7 @@ body::-webkit-scrollbar {
   padding: 8px;
   font-family: Roboto;
   font-size: 20.5px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: -0.21px;
@@ -805,7 +817,7 @@ body::-webkit-scrollbar {
   height: 30px;
   font-family: Roboto;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.07;
@@ -879,7 +891,6 @@ body::-webkit-scrollbar {
     flex-direction: column;
   }
   .headerContents .leftContainer ul li {
-    cursor: pointer;
     padding: 12px 16px;
   }
 
@@ -917,22 +928,28 @@ body::-webkit-scrollbar {
     height: 100vh;
     object-fit: cover;
   }
+  .banner img.web {
+    display: none;
+  }
+  .banner img.mob {
+    display: block;
+  }
 
   .banner .fontContainer {
     width: 100vw;
   }
   .banner1 .fontContainer {
-    padding: 20px;
-    top: 55%;
+    left: unset;
+    padding: 30px;
+    top: 21%;
   }
   .banner1 .bannerLargeFont {
     display: flex;
     font-family: Roboto;
-    font-size: 20.5px;
+    font-size: 25px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.22;
     letter-spacing: -0.21px;
     text-align: left;
     color: #ffffff;
@@ -942,10 +959,11 @@ body::-webkit-scrollbar {
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.54;
-    letter-spacing: -0.33px;
+    line-height: 1.58;
+    letter-spacing: -0.6px;
     text-align: left;
-    color: #ffffff;
+    color: #bb9364;
+    max-width: unset;
   }
   .banner2 .fontContainer {
     left: unset;
@@ -985,6 +1003,7 @@ body::-webkit-scrollbar {
   }
 
   .smallBanner .fontContainer {
+    padding: 28px;
     padding-top: 44px;
     position: relative;
     left: 0;
@@ -996,7 +1015,7 @@ body::-webkit-scrollbar {
     text-align: center;
     font-family: Roboto;
     font-size: 9px;
-    font-weight: 500;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     letter-spacing: 3.6px;
@@ -1053,8 +1072,8 @@ body::-webkit-scrollbar {
     background-color: rgba(32, 33, 34, 0.3);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin-left: 4vw;
+    height: 482px;
     margin-right: 4vw;
   }
   .bottomContent > .title {
