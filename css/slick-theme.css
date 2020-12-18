@@ -101,12 +101,12 @@
 
 /* Dots */
 .slick-dotted.slick-slider {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .slick-dots {
   position: absolute;
-  bottom: -25px;
+  bottom: 0;
 
   display: block;
 

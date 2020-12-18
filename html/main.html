@@ -12,26 +12,7 @@
     <link rel="stylesheet" href="../css/slick-theme.css" />
   </head>
   <script>
-    //애니메이션 시작
-    function animationStart(animationArea) {
-      animationArea.find('.bannerLargeFont > div').each(function (index, item) {
-        $(item)
-          .addClass('showStepFont')
-          .css({ 'animation-delay': index / 5 + 's' });
-      });
-      animationArea.find('.bannerSmallFont').addClass('fadeFont');
-      animationArea.find('.dice1').addClass('dice1Animation');
-      animationArea.find('.dice2').addClass('dice2Animation');
-    }
-    //애니메이션 초기화
-    function animationInit(animationArea) {
-      animationArea.find('.bannerLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
-      animationArea.find('.bannerSmallFont').removeClass('fadeFont');
-      animationArea.find('.dice1').removeClass('dice1Animation');
-      animationArea.find('.dice2').removeClass('dice2Animation');
-    }
-
-    $(document).ready(function () {
+    function handleSwiper() {
       //   스와이퍼 초기세팅
       var swiper = $('.swiper-wrapper').slick({
         arrows: false,
@@ -56,25 +37,39 @@
         animationInit(activeSlider);
       });
 
-      var bottomSwiper = $('.bottomContainer').slick({
-        arrows: false,
-        infinite: true,
-        dots: true,
-        on: {
-          afterChange: function (event, slick, currentSlide, nextSlide) {
-            console.log(event, slick, currentSlide, nextSlide);
+      var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      if (vw <= 640) {
+        var bottomSwiper = $('.bottomContainer').slick({
+          arrows: false,
+          infinite: true,
+          dots: true,
+          on: {
+            afterChange: function (event, slick, currentSlide, nextSlide) {
+              console.log(event, slick, currentSlide, nextSlide);
+            },
           },
-        },
-      });
+        });
+      }
+    }
 
-      animationStart($('.banner1'));
-      //   showDeposit();
-
-      $('.hamberger').on('click', function () {
-        $('header .headerContents').find('.leftContainer').toggleClass('active');
-        $('header .headerContents').find('.rightContainer').toggleClass('active');
+    //애니메이션 시작
+    function animationStart(animationArea) {
+      animationArea.find('.bannerLargeFont > div').each(function (index, item) {
+        $(item)
+          .addClass('showStepFont')
+          .css({ 'animation-delay': index / 5 + 's' });
       });
-    });
+      animationArea.find('.bannerSmallFont').addClass('fadeFont');
+      animationArea.find('.dice1').addClass('dice1Animation');
+      animationArea.find('.dice2').addClass('dice2Animation');
+    }
+    //애니메이션 초기화
+    function animationInit(animationArea) {
+      animationArea.find('.bannerLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
+      animationArea.find('.bannerSmallFont').removeClass('fadeFont');
+      animationArea.find('.dice1').removeClass('dice1Animation');
+      animationArea.find('.dice2').removeClass('dice2Animation');
+    }
 
     function showPopupMask() {
       $('#root').addClass('filter');
@@ -94,6 +89,25 @@
       showPopupMask();
       $('.depositPopup').show();
     }
+
+    $(document).ready(function () {
+      animationStart($('.banner1'));
+
+      handleSwiper();
+      $(document).on('click', '.hamberger', function () {
+        $('header .headerContents').find('.leftContainer').toggleClass('active');
+        $('header .headerContents').find('.rightContainer').toggleClass('active');
+      });
+    });
+
+    $(document).on('scroll', function (e) {
+      var scroll_top = $(this).scrollTop();
+      var background = scroll_top / 80;
+      console.log(scroll_top);
+      $('.header').css({
+        background: 'rgba(9, 8, 4, ' + background + ')',
+      });
+    });
   </script>
   <body>
     <article id="root">
@@ -181,7 +195,7 @@
           </div>
         </div>
         <div class="rollingGameContainer smallBanner">
-          <img src="../images/rollingGame.png" />
+          <img src="../images/rollingGame_cut.png" />
           <div class="fontContainer">
             <div class="goldSmallFont">PARADAISE CITY CASINO</div>
             <div class="goldLargeFont">ROLLING GAME</div>
@@ -199,7 +213,7 @@
           </div>
         </div>
         <div class="rouletteContainer smallBanner">
-          <img src="../images/roulette.png" />
+          <img src="../images/roulette_cut.png" />
           <div class="fontContainer">
             <div class="goldSmallFont">PARADAISE CITY CASINO</div>
             <div class="goldLargeFont">부담제로, 방문지원 이벤트</div>
@@ -207,7 +221,7 @@
           </div>
         </div>
         <div class="bottomContainer">
-          <div>
+          <div class="bottomItemWrap">
             <div class="bottomContent">
               <img src="../images/icon1.png" />
               <div class="title">공지사항</div>
@@ -223,7 +237,7 @@
               <button>more</button>
             </div>
           </div>
-          <div>
+          <div class="bottomItemWrap">
             <div class="bottomContent">
               <img src="../images/icon2.png" />
               <div class="title">이벤트</div>
@@ -239,7 +253,7 @@
               <button>more</button>
             </div>
           </div>
-          <div>
+          <div class="bottomItemWrap">
             <div class="bottomContent">
               <img src="../images/icon3.png" />
               <div class="title">Q&A</div>
