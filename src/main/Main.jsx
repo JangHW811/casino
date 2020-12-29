@@ -5,21 +5,24 @@ const Main = () => {
   //state정의
   const [buttonText, setButtonText] = useState('정답보기'); //클릭한 버튼명(버튼명으로 현재 상태비교)
   const [rotateSecond, setRotateSecond] = useState(0); //1초재생인지 3초재생인지 상태값(0일때는 애니메이션 없음)
-  const [recordInside, isRecordInsede] = useState(false); //레코드판을 넣는 애니메이션 트리거
+  const [recordInside, isRecordInside] = useState(false); //레코드판을 넣는 애니메이션 트리거
   const [activeIndex, setActiveIndex] = useState(0); //현재 선택된 레코드판 index넘버
+  const [answer, setAnswer] = useState(); //정답 text state
 
   //activeIndex를 주시하며 바뀔때마다 레코드판 넣는 애니메이션과 버튼명을 초기화해줌
   useEffect(() => {
-    isRecordInsede(false);
+    isRecordInside(false);
     setButtonText('정답보기');
+    setAnswer(undefined);
   }, [activeIndex]);
 
   //다음문제 버튼 이벤트 정의
   const handleNextButton = () => {
-    //버튼 텍스트가 '정답보기' 일때 버튼명을 '다음문제'로 변경 후 레코드 트리거를true로 바꿔줌
+    //버튼 텍스트가 '정답보기' 일때 버튼명을 '다음문제'로 변경 후 레코드 집어넣는 트리거를true로 바꿔줌
     if (buttonText === '정답보기') {
-      isRecordInsede(true);
+      isRecordInside(true);
       setButtonText('다음문제');
+      setAnswer('Dumb Dumb');
     } else {
       //버튼 텍스트가 '다음문제'일때 선택된 레코드를 1증가하여 다음 레코드를 불러옴
       setActiveIndex(activeIndex + 1);
@@ -29,9 +32,11 @@ const Main = () => {
   //레코드판 돌아가는 애니메이션 핸들러
   const handleRotateAnimation = (second) => {
     //레코드판 재생시간이 0초일때만 에니메이션 실행을 하여 마구 연타하였을때 애니메이션 꼬이는것을 방지
-    rotateSecond || setRotateSecond(second);
+    if (rotateSecond === 0) {
+      setRotateSecond(second);
 
-    //이곳에 사운드 재생을 넣으면 될듯합니다.
+      //이곳에 사운드 재생을 넣으면 될듯합니다.
+    }
   };
 
   //레코드 데이터 정의
@@ -64,12 +69,15 @@ const Main = () => {
               <SwiperContainer key={index} activeIndex={activeIndex} thisIndex={index}>
                 <CaseImg src='assets/images/case.png' />
                 {index === activeIndex && (
-                  <RecordImg
-                    src={item.recordImg}
-                    rotateSecond={rotateSecond}
-                    onAnimationEnd={() => setRotateSecond(0)} // 해당요소의 애니메이션이 종료됐을때 레코드판 돌리는 재생시간을 다시 0초로 초기화
-                    inside={recordInside} //레코드가 들어가는 애니메이션을위한 트리거 변수
-                  />
+                  <>
+                    <AnswerText>{answer ?? '정답은?'}</AnswerText>
+                    <RecordImg
+                      src={item.recordImg}
+                      rotateSecond={rotateSecond}
+                      onAnimationEnd={() => setRotateSecond(0)} // 해당요소의 애니메이션이 종료됐을때 레코드판 돌리는 재생시간을 다시 0초로 초기화
+                      inside={recordInside} //레코드가 들어가는 애니메이션을위한 트리거 변수
+                    />
+                  </>
                 )}
               </SwiperContainer>
             );
@@ -172,6 +180,13 @@ const BackgroundImg = styled.img`
   width: 100%;
 `;
 
+const AnswerText = styled.p`
+  font-size: 24px;
+  position: absolute;
+  margin-left: 50%;
+  z-index: 11;
+`;
+
 const RecordImg = styled.img`
   object-fit: contain;
   z-index: 1;
@@ -202,6 +217,8 @@ const SwiperContainer = styled.div`
   display: flex;
   height: 100%;
   position: absolute;
+  align-items: center;
+  justify-content: center;
   animation-fill-mode: forwards;
   ${({ activeIndex, thisIndex }) => {
     // 선택된 index와 각요소의 index를 비교해서 애니메이션과 위치를 처리해줌
