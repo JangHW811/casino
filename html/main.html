@@ -93,13 +93,9 @@
     $(document).ready(function () {
       handleSwiper();
       animationStart($('.banner2'));
-      $(document).on('click', '.hamberger', function () {
-        var header = $(this).closest('.header');
-        header.addClass('active');
-      });
-      $(document).on('click', '.xButton', function () {
-        var header = $(this).closest('.header');
-        header.removeClass('active');
+      $('.leftContainer').on('click', '.gameGuide', function () {
+        $(this).find('.subMenu').slideToggle();
+        $(this).toggleClass('active');
       });
     });
 
@@ -110,6 +106,15 @@
         background: 'rgba(9, 8, 4, ' + background + ')',
       });
     });
+
+    $(document).on('click', '.hamberger', function () {
+      var header = $(this).closest('.header');
+      header.addClass('active');
+    });
+    $(document).on('click', '.xButton', function () {
+      var header = $(this).closest('.header');
+      header.removeClass('active');
+    });
   </script>
   <body>
     <article id="root">
@@ -117,9 +122,18 @@
         <div class="headerContents">
           <div class="leftContainer">
             <ul>
-              <li class="overview">OVERVIEW</li>
-              <li>이용안내</li>
-              <li>게임가이드</li>
+              <li class="overview"><span>OVERVIEW</span></li>
+              <li><span>이용안내</span></li>
+              <li class="gameGuide">
+                <span>게임가이드</span>
+                <div class="subMenu">
+                  <div class="menu">슬롯</div>
+                  <div class="menu">바카라</div>
+                  <div class="menu">룰렛</div>
+                  <div class="menu">포커</div>
+                  <div class="menu">바휠</div>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="title">
