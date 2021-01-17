@@ -94,8 +94,12 @@
       handleSwiper();
       animationStart($('.banner2'));
       $(document).on('click', '.hamberger', function () {
-        $('header .headerContents').find('.leftContainer').toggleClass('active');
-        $('header .headerContents').find('.rightContainer').toggleClass('active');
+        var header = $(this).closest('.header');
+        header.addClass('active');
+      });
+      $(document).on('click', '.xButton', function () {
+        var header = $(this).closest('.header');
+        header.removeClass('active');
       });
     });
 
@@ -111,7 +115,6 @@
     <article id="root">
       <header class="header">
         <div class="headerContents">
-          <img class="hamberger mob" src="../images/icon_menu.png" />
           <div class="leftContainer">
             <ul>
               <li class="overview">OVERVIEW</li>
@@ -119,7 +122,15 @@
               <li>게임가이드</li>
             </ul>
           </div>
-          <div class="title">PARADISE</div>
+          <div class="title">
+            <img class="hamberger mob" src="../images/icon_menu.png" />
+            <span>PARADISE</span>
+            <a class="xButton">
+              <div class="line1">
+                <div class="line2"></div>
+              </div>
+            </a>
+          </div>
           <div class="rightContainer">
             <div class="inputContainer">
               <input placeholder="ID" />

@@ -868,8 +868,45 @@ body::-webkit-scrollbar {
     display: block !important;
   }
   .header {
-    padding: 20px 0px;
     border-bottom: 1px solid rgb(232, 231, 231, 0.3);
+  }
+
+  .xButton {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    display: none;
+  }
+  .line1 {
+    height: 20px;
+    width: 2px;
+    margin-left: 12px;
+    background-color: white;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+
+  .line2 {
+    height: 20px;
+    width: 2px;
+    background-color: white;
+    transform: rotate(90deg);
+    z-index: 2;
+  }
+  .active.header {
+    background: rgba(9, 8, 4, 0.8);
+    height: 100vh;
+  }
+  .active.header .xButton {
+    display: block;
+  }
+  .active.header img.hamberger {
+    opacity: 0.2;
+  }
+  .active.header .leftContainer,
+  .active.header .rightContainer {
+    display: flex !important;
   }
 
   .header img.hamberger {
@@ -881,13 +918,23 @@ body::-webkit-scrollbar {
     height: 18px;
   }
   .headerContents {
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     height: auto;
     margin: 0;
   }
+  .active .headerContents {
+    height: 100vh;
+  }
   .headerContents .title {
     order: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 20px;
+    border-bottom: solid 1px RGBA(232, 231, 231, 0.1);
   }
   .headerContents .leftContainer {
     display: none;
@@ -895,9 +942,15 @@ body::-webkit-scrollbar {
   }
   .headerContents .leftContainer ul {
     flex-direction: column;
+    padding: 0;
   }
   .headerContents .leftContainer ul li {
+    box-sizing: border-box;
+    margin: 0;
     padding: 12px 16px;
+    border-bottom: solid 1px RGBA(127, 87, 60, 0.5);
+    width: 100vw;
+    text-align: center;
   }
 
   .headerContents .leftContainer {
@@ -908,6 +961,12 @@ body::-webkit-scrollbar {
     display: none;
     order: 2;
     margin: 0;
+    width: 100vw;
+    flex: 1;
+    align-items: flex-end;
+  }
+  .headerContents .rightContainer .inputContainer {
+    display: none;
   }
   .headerContents .rightContainer .inputContainer input {
     width: 20vw;
@@ -916,9 +975,6 @@ body::-webkit-scrollbar {
     width: 16vw;
   }
 
-  .active {
-    display: flex !important;
-  }
   .swiper-wrapper {
     height: 100vh;
   }
