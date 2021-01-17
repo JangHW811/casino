@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/slick-theme.css" />
   </head>
   <script>
+    var isMob = false;
     function handleSwiper() {
       //   스와이퍼 초기세팅
       var swiper = $('.swiper-wrapper').slick({
@@ -93,10 +94,12 @@
     $(document).ready(function () {
       handleSwiper();
       animationStart($('.banner2'));
-      $('.leftContainer').on('click', '.gameGuide', function () {
-        $(this).find('.subMenu').slideToggle();
-        $(this).toggleClass('active');
-      });
+      if (isMob) {
+        $('.leftContainer').on('click', '.gameGuide', function () {
+          $(this).next('.subMenu').slideToggle();
+          $(this).toggleClass('active');
+        });
+      }
     });
 
     $(document).on('scroll', function (e) {
@@ -124,8 +127,8 @@
             <ul>
               <li class="overview"><span>OVERVIEW</span></li>
               <li><span>이용안내</span></li>
-              <li class="gameGuide">
-                <span>게임가이드</span>
+              <li>
+                <span class="gameGuide">게임가이드</span>
                 <div class="subMenu">
                   <div class="menu">슬롯</div>
                   <div class="menu">바카라</div>

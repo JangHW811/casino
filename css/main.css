@@ -57,7 +57,7 @@ body::-webkit-scrollbar {
   text-align: left;
   color: white;
 }
-.header .leftContainer ul li.active {
+.header .leftContainer ul .gameGuide.active {
   color: #c88b60;
 }
 .header .leftContainer .subMenu {
@@ -1178,5 +1178,14 @@ body::-webkit-scrollbar {
 
   .bottomContainer .slick-dots {
     bottom: 100px;
+  }
+
+  .mask .popupContainer {
+    height: 100vh;
+    width: 100vw;
+  }
+  .mask .popupContainer .popup {
+    height: 100%;
+    width: 100%;
   }
 }
