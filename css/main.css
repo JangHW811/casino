@@ -122,10 +122,10 @@ body::-webkit-scrollbar {
   position: relative;
 }
 .web {
-  display: block;
+  display: block !important;
 }
 .mob {
-  display: none;
+  display: none !important;
 }
 
 .banner > img {
@@ -862,10 +862,10 @@ body::-webkit-scrollbar {
 
 @media screen and (max-width: 640px) {
   .web {
-    display: none;
+    display: none !important;
   }
   .mob {
-    display: block;
+    display: block !important;
   }
   .header {
     padding: 20px 0px;
