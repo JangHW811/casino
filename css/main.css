@@ -558,12 +558,12 @@ body::-webkit-scrollbar {
 .mask .popup {
   position: relative;
   width: 65vw;
-  background-image: url('../images/joinBg.png');
+  background-image: url('../images/popBackground.png');
   background-color: #070707;
   justify-content: center;
-  background-size: contain;
+  background-size: auto;
   background-repeat: no-repeat;
-  background-position: right -2vw bottom 2vh;
+  background-position: right 0vw bottom 0vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -596,6 +596,111 @@ body::-webkit-scrollbar {
 .joinPopup .contents {
   margin: 93px 0 68px;
   width: 100%;
+}
+.mask .slotPopup .popup {
+  padding: 0 3vw;
+}
+.slotPopup .contents {
+  padding: 75px 0 90px;
+  width: 100%;
+}
+
+.slotPopup .tabContainer {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.slotPopup .tabContainer .tab {
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b77f57;
+  border-bottom: solid 1px #7f573c;
+  flex: 1;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 38px;
+}
+.slotPopup .tabContainer .tab.active {
+  border-width: 4px;
+}
+.slotPopup .bannerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  padding: 82px 132px;
+  grid-gap: 20px;
+  min-height: 126px;
+}
+.slotPopup .bannerContainer .bannerItem {
+  border-radius: 12px;
+  border: solid 1px #b77f57;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 126px;
+  position: relative;
+}
+.slotPopup .bannerContainer .bannerItem:hover {
+  border-radius: 12px;
+  border: solid 2px #b77f57;
+}
+.slotPopup .bannerContainer .bannerItem:hover::before {
+  border-radius: 12px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+.slotPopup .bannerContainer .bannerItem:hover > .hoverContainer {
+  display: flex;
+}
+.slotPopup .bannerContainer .bannerItem > .hoverContainer {
+  display: none;
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: -0.9px;
+  text-align: center;
+  color: #ca936c;
+  justify-content: center;
+  align-items: center;
+}
+.slotPopup .bannerContainer .bannerItem > .hoverContainer > .go {
+  border: 0;
+  margin-left: 10px;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #b77f57;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.slotPopup .bannerContainer .bannerItem > .hoverContainer > .go::before {
+  content: 'GO';
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0.38px;
+  text-align: center;
+  color: #ffffff;
 }
 .popup .inputContainer {
   display: flex;
@@ -844,8 +949,13 @@ body::-webkit-scrollbar {
   color: #ffffff;
   flex: 1;
 }
+.depositPopup .inputContainer button {
+  margin-left: 10px;
+}
+.depositPopup .inputContainer button:first-child {
+  margin-left: 0px;
+}
 .depositPopup .inputContainer .blackButton {
-  margin-right: 10px;
   height: 30px;
   border-radius: 2px;
   border: solid 1px #c88b60;
@@ -1186,7 +1296,7 @@ body::-webkit-scrollbar {
     width: 100vw;
   }
   .mask .popupContainer .popup {
-    height: 100%;
+    height: auto;
     width: 100%;
   }
 
@@ -1198,7 +1308,7 @@ body::-webkit-scrollbar {
     right: 20px;
     top: unset;
   }
-  .mask .popup .title {
+  .mask .popup .goldTitle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1206,6 +1316,7 @@ body::-webkit-scrollbar {
     margin-top: 0;
     border-bottom: solid 1px RGBA(232, 231, 231, 0.1);
     min-height: 60px;
+    font-size: 17px;
   }
 
   .mask .popup .inputContainer {
@@ -1232,8 +1343,65 @@ body::-webkit-scrollbar {
   }
 
   .popup .inputContainer .money::before {
-    right: 0%;
+    right: 105px;
     top: 50px;
     left: unset;
+  }
+  .popup .inputContainer .money .goldButton {
+    position: absolute;
+    right: 0px;
+    top: 48px;
+    width: 100px;
+  }
+
+  .depositPopup .inputContainer .blackButton:last-child {
+    margin-right: 0px;
+  }
+  .depositPopup .inputContainer .buttonContainer {
+    margin: 9px 0px;
+  }
+
+  .slotPopup .contents {
+    padding: 60px 0 90px;
+  }
+  .slotPopup .slotBanner {
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+  }
+  .slotPopup .slotBanner > img {
+    height: auto;
+    object-fit: contain;
+    width: 100vw;
+  }
+  .slotPopup .tabContainer .tab {
+    align-items: center;
+    height: 35px;
+    font-size: 9px;
+  }
+
+  .slotPopup .bannerContainer {
+    padding: 20px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  }
+
+  .slotPopup .bannerContainer .bannerItem {
+    min-height: 65px;
+  }
+  .slotPopup .bannerContainer .bannerItem > img {
+    object-fit: scale-down;
+    width: 62%;
+  }
+  .slotPopup .bannerContainer .bannerItem > .hoverContainer {
+    font-size: 9px;
+  }
+  .slotPopup .bannerContainer .bannerItem > .hoverContainer > .go {
+    margin-left: 5px;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  .slotPopup .bannerContainer .bannerItem > .hoverContainer > .go::before {
+    font-size: 8px;
   }
 }

@@ -9,44 +9,75 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="../js/slick.min.js"></script>
     <script src="../js/common.js"></script>
-    <link rel="stylesheet" href="../css/slick.css" />
-    <link rel="stylesheet" href="../css/slick-theme.css" />
   </head>
   <script>
-    function showPopupMask() {
-      $('#root').addClass('filter');
-      $('.mask').css({ display: 'flex' });
-    }
-    function showSlot() {
-      showPopupMask();
-      $('.slotPopup').show();
-    }
-    function closePopup(pop) {
-      $(pop).closest('.mask').hide().find('.popupContainer').hide();
-      $('#root').removeClass('filter');
+    function resize() {
+      $(window).resize(function (event) {
+        var width = $(window).width();
+        isMob = width < 640;
+      });
     }
     function activeTab(li) {
       console.log(li);
       $(li).addClass('active').siblings('.tab').removeClass('active');
     }
     $(document).ready(function () {
-      showSlot();
+      resize();
+    });
+    $(document).on('click', '.hamberger', function () {
+      var header = $(this).closest('.header');
+      header.addClass('active');
+    });
+    $(document).on('click', '.xButton', function () {
+      var header = $(this).closest('.header');
+      header.removeClass('active');
     });
   </script>
   <body>
-    <button onclick="showSlot();">슬롯</button>
-    <!-- 팝업 임시 마스킹처리 영역 시작 -->
-    <div class="mask">
-      <!--입금신청 팝업 시작-->
-      <div class="slotPopup popupContainer">
-        <div class="popup">
-          <div class="goldTitle">
+    <article id="root">
+      <header class="header">
+        <div class="headerContents">
+          <div class="leftContainer">
+            <ul>
+              <li class="overview"><span>OVERVIEW</span></li>
+              <li><span>이용안내</span></li>
+              <li>
+                <span class="gameGuide">게임가이드</span>
+                <div class="subMenu">
+                  <div class="menu">슬롯</div>
+                  <div class="menu">바카라</div>
+                  <div class="menu">룰렛</div>
+                  <div class="menu">포커</div>
+                  <div class="menu">바휠</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="title">
             <img class="hamberger mob" src="../images/icon_menu.png" />
             <span>슬롯</span>
-            <a class="btnClose web" onclick="closePopup(this);"><img src="../images/btn_close.png" /></a>
+            <a class="xButton">
+              <div class="line1">
+                <div class="line2"></div>
+              </div>
+            </a>
           </div>
-
+          <div class="rightContainer">
+            <div class="inputContainer">
+              <input placeholder="ID" />
+              <input placeholder="password" />
+            </div>
+            <div class="buttonContainer">
+              <button class="login" onclick="">로그인</button>
+              <button class="join" onclick="">회원가입</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="section">
+        <div class="slotPopup">
           <div class="contents">
+            <div class="slotBanner"><img src="../images/slot-bg.png" /></div>
             <ul class="tabContainer">
               <li onclick="activeTab(this)" class="tab active">VIP ROOMS</li>
               <li onclick="activeTab(this)" class="tab">VIP ROOMS</li>
@@ -92,9 +123,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <!--입금신청 팝업 종료-->
-    </div>
-    <!-- 팝업 임시 마스킹처리 영역 시작 -->
+      </section>
+    </article>
   </body>
 </html>
