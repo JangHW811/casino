@@ -17,17 +17,53 @@
         isMob = width < 640;
       });
     }
+
     function activeTab(li) {
       console.log(li);
       $(li).addClass('active').siblings('.tab').removeClass('active');
+      $(li).closest('.contents').find('.bannerContainer').hide();
+      console.log(li);
+      var activeTabId = $(li).data('activeTabId');
+      $('#' + activeTabId).show();
+    }
+
+    function activeTabId(tabId) {
+      $('[data-active-tab-id=' + tabId + ']')
+        .addClass('active')
+        .siblings('.tab')
+        .removeClass('active');
+      $('.bannerContainer').hide();
+      $('#' + tabId).show();
+    }
+
+    function showSlot(li) {
+      if (isMob) {
+        if (li) {
+          var activeTabId = $(li).data('activeTabId');
+          location.href = './slot2.html?tabId=' + activeTabId;
+        }
+      } else {
+        showPopupMask();
+        $('.slotPopup').show();
+      }
     }
     $(document).ready(function () {
       resize();
+      var tabId = findGetParameter('tabId');
+      activeTabId(tabId);
+      $('.leftContainer').on('click', '.gameGuide', function () {
+        if (isMob) {
+          $(this).next('.subMenu').slideToggle();
+          $(this).toggleClass('active');
+        }
+      });
     });
+
     $(document).on('click', '.hamberger', function () {
       var header = $(this).closest('.header');
       header.addClass('active');
     });
+
     $(document).on('click', '.xButton', function () {
       var header = $(this).closest('.header');
       header.removeClass('active');
@@ -39,23 +75,21 @@
         <div class="headerContents">
           <div class="leftContainer">
             <ul>
-              <li class="overview"><span>OVERVIEW</span></li>
+              <li class="overview" onclick="showDeposit()"><span>OVERVIEW</span></li>
               <li><span>이용안내</span></li>
               <li>
-                <span class="gameGuide">게임가이드</span>
+                <span class="gameGuide" onclick="showSlot();">게임가이드</span>
                 <div class="subMenu">
-                  <div class="menu">슬롯</div>
-                  <div class="menu">바카라</div>
-                  <div class="menu">룰렛</div>
-                  <div class="menu">포커</div>
-                  <div class="menu">바휠</div>
+                  <div class="menu" onclick="showSlot(this);" data-active-tab-id="tab1">슬롯</div>
+                  <div class="menu" onclick="showSlot(this);" data-active-tab-id="tab2">바카라</div>
+                  <div class="menu" onclick="showSlot(this);" data-active-tab-id="tab3">룰렛</div>
                 </div>
               </li>
             </ul>
           </div>
           <div class="title">
             <img class="hamberger mob" src="../images/icon_menu.png" />
-            <span>슬롯</span>
+            <span>PARADISE</span>
             <a class="xButton">
               <div class="line1">
                 <div class="line2"></div>
@@ -69,7 +103,7 @@
             </div>
             <div class="buttonContainer">
               <button class="login" onclick="">로그인</button>
-              <button class="join" onclick="">회원가입</button>
+              <button class="join" onclick="showJoin();">회원가입</button>
             </div>
           </div>
         </div>
@@ -79,45 +113,148 @@
           <div class="contents">
             <div class="slotBanner"><img src="../images/slot-bg.png" /></div>
             <ul class="tabContainer">
-              <li onclick="activeTab(this)" class="tab active">VIP ROOMS</li>
-              <li onclick="activeTab(this)" class="tab">VIP ROOMS</li>
-              <li onclick="activeTab(this)" class="tab">VIP ROOMS</li>
-              <li onclick="activeTab(this)" class="tab">VIP ROOMS</li>
+              <li onclick="activeTab(this)" data-active-tab-id="tab1" class="tab active">슬롯</li>
+              <li onclick="activeTab(this)" data-active-tab-id="tab2" class="tab">바카라</li>
+              <li onclick="activeTab(this)" data-active-tab-id="tab3" class="tab">룰렛</li>
             </ul>
-            <div class="bannerContainer">
+            <div class="bannerContainer" id="tab1">
               <div class="bannerItem">
                 <img src="../images/banner_icon1.png" />
                 <div class="hoverContainer">
                   <span>플레이엔고 슬롯</span>
-                  <button class="go" href="#"></button>
+                  <button class="go" onclick="location.href='blink'"></button>
                 </div>
               </div>
               <div class="bannerItem">
                 <img src="../images/banner_icon875.png" />
                 <div class="hoverContainer">
                   <span>프라그마틱 플레이 슬롯</span>
-                  <button class="go" href="#"></button>
+                  <button class="go" onclick="location.href='blink'"></button>
                 </div>
               </div>
               <div class="bannerItem">
                 <img src="../images/banner_icon8752.png" />
                 <div class="hoverContainer">
                   <span>퀵스핀 슬롯</span>
-                  <button class="go" href="#"></button>
+                  <button class="go" onclick="location.href='blink'"></button>
                 </div>
               </div>
               <div class="bannerItem">
                 <img src="../images/banner_icon8754.png" />
                 <div class="hoverContainer">
                   <span>이엘케이스튜디오 슬롯</span>
-                  <button class="go" href="#"></button>
+                  <button class="go" onclick="location.href='blink'"></button>
                 </div>
               </div>
               <div class="bannerItem">
                 <img src="../images/banner_icon8755.png" />
                 <div class="hoverContainer">
                   <span>마이크로게이밍 슬롯</span>
-                  <button class="go" href="#"></button>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bannerContainer" id="tab2" style="display: none">
+              <div class="bannerItem">
+                <img src="../images/banner_icon8755.png" />
+                <div class="hoverContainer">
+                  <span>마이크로게이밍 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon875.png" />
+                <div class="hoverContainer">
+                  <span>프라그마틱 플레이 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon1.png" />
+                <div class="hoverContainer">
+                  <span>플레이엔고 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8755.png" />
+                <div class="hoverContainer">
+                  <span>마이크로게이밍 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon875.png" />
+                <div class="hoverContainer">
+                  <span>프라그마틱 플레이 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8752.png" />
+                <div class="hoverContainer">
+                  <span>퀵스핀 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8754.png" />
+                <div class="hoverContainer">
+                  <span>이엘케이스튜디오 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bannerContainer" id="tab3" style="display: none">
+              <div class="bannerItem">
+                <img src="../images/banner_icon875.png" />
+                <div class="hoverContainer">
+                  <span>프라그마틱 플레이 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon1.png" />
+                <div class="hoverContainer">
+                  <span>플레이엔고 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8755.png" />
+                <div class="hoverContainer">
+                  <span>마이크로게이밍 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8752.png" />
+                <div class="hoverContainer">
+                  <span>퀵스핀 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8755.png" />
+                <div class="hoverContainer">
+                  <span>마이크로게이밍 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8754.png" />
+                <div class="hoverContainer">
+                  <span>이엘케이스튜디오 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
+                </div>
+              </div>
+              <div class="bannerItem">
+                <img src="../images/banner_icon8755.png" />
+                <div class="hoverContainer">
+                  <span>마이크로게이밍 슬롯</span>
+                  <button class="go" onclick="location.href='blink'"></button>
                 </div>
               </div>
             </div>

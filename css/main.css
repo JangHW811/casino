@@ -378,6 +378,7 @@ body::-webkit-scrollbar {
   max-width: 32vw;
 }
 .smallBanner {
+  cursor: pointer;
   height: 372px;
   position: relative;
 }
@@ -561,7 +562,7 @@ body::-webkit-scrollbar {
   background-image: url('../images/popBackground.png');
   background-color: #070707;
   justify-content: center;
-  background-size: auto;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: right 0vw bottom 0vh;
   display: flex;
@@ -652,14 +653,14 @@ body::-webkit-scrollbar {
   border: solid 2px #b77f57;
 }
 .slotPopup .bannerContainer .bannerItem:hover::before {
-  border-radius: 12px;
+  border-radius: 10px;
   content: '';
   display: block;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
   background: rgba(0, 0, 0, 0.9);
 }
 .slotPopup .bannerContainer .bannerItem:hover > .hoverContainer {
