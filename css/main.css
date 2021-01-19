@@ -1026,7 +1026,7 @@ body::-webkit-scrollbar {
     z-index: 2;
   }
   .active.header {
-    background: rgba(9, 8, 4, 0.8);
+    background: rgba(9, 8, 4, 0.8) !important;
     height: 100vh;
   }
   .active.header .xButton {
@@ -1101,8 +1101,14 @@ body::-webkit-scrollbar {
   .headerContents .rightContainer .inputContainer input {
     width: 20vw;
   }
+  .headerContents .rightContainer .buttonContainer {
+    padding: 53px 0 93px;
+    border-top: solid 1px RGBA(127, 87, 60, 0.5);
+    width: 100vw;
+    justify-content: center;
+  }
   .headerContents .rightContainer .buttonContainer button {
-    width: 16vw;
+    width: 25vw;
   }
 
   .swiper-wrapper {
@@ -1297,7 +1303,7 @@ body::-webkit-scrollbar {
     width: 100vw;
   }
   .mask .popupContainer .popup {
-    height: auto;
+    height: 100%;
     width: 100%;
   }
 
@@ -1404,5 +1410,101 @@ body::-webkit-scrollbar {
   }
   .slotPopup .bannerContainer .bannerItem > .hoverContainer > .go::before {
     font-size: 8px;
+  }
+
+  .loginPopup .contents {
+    padding-top: 27px;
+    width: 100%;
+  }
+  .loginPopup .imgContainer > img {
+    width: 47px;
+    height: 38px;
+  }
+  .loginPopup .paradiseFont {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.28;
+    letter-spacing: -0.29px;
+    text-align: left;
+    color: #7f573c;
+  }
+
+  .loginPopup .inputContainer {
+    margin-top: 9px;
+  }
+  .loginPopup .inputContainer > input {
+    padding-left: 7px;
+    opacity: 0.6;
+    border: solid 1px #c88b60;
+    height: 30px;
+    font-weight: 500;
+    font-size: 11px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.22;
+    letter-spacing: -0.21px;
+    text-align: left;
+    color: #ffffff;
+  }
+  .loginPopup .inputContainer > input::placeholder {
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.22;
+    letter-spacing: -0.21px;
+    text-align: left;
+    color: #7f573c;
+  }
+  .loginPopup .inputContainer .errorMessage {
+    font-size: 9px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.45px;
+    text-align: left;
+    color: #fc5356;
+  }
+  .loginPopup .checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+  }
+  .loginPopup .checkboxContainer label {
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.17px;
+    text-align: left;
+    color: #b77f57;
+    font-size: 9px;
+  }
+  .loginPopup .checkboxContainer input[type='checkbox'] {
+    display: none;
+  }
+  .loginPopup .checkboxContainer input[type='checkbox'] + *::before {
+    content: '';
+    display: inline-block;
+    vertical-align: bottom;
+    width: 13px;
+    height: 13px;
+    opacity: 0.6;
+    border: solid 1px #c88b60;
+    background-color: #111111;
+    margin-right: 6px;
+  }
+  .loginPopup .checkboxContainer input[type='checkbox']:checked + * {
+    color: #c88b60;
+  }
+  .loginPopup .checkboxContainer input[type='checkbox']:checked + *::before {
+    content: '✓';
+    color: white;
+    text-align: center;
+    background: #c88b60;
+    border-color: #c88b60;
   }
 }

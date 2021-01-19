@@ -141,6 +141,10 @@
       showPopupMask();
       $('.joinPopup').show();
     }
+    function showLogin() {
+      showPopupMask();
+      $('.loginPopup').show();
+    }
 
     function showSlot(li) {
       if (isMob) {
@@ -195,7 +199,7 @@
               <input placeholder="password" />
             </div>
             <div class="buttonContainer">
-              <button class="login" onclick="">로그인</button>
+              <button class="login" onclick="showLogin();">로그인</button>
               <button class="join" onclick="showJoin();">회원가입</button>
             </div>
           </div>
@@ -204,8 +208,8 @@
       <section class="section">
         <div class="swiper-wrapper">
           <div class="swiper-slide banner banner2">
-            <img src="../images/banner2.png" class="web" />
-            <img src="../images/banner2_mob.png" class="mob" />
+            <img src="../images/web_main_bg_01_960px.png" class="web" />
+            <img src="../images/m_visual_01.png" class="mob" />
             <div class="fontContainer">
               <div class="bannerLargeFont">
                 <!-- PARADISE CASINO -->
@@ -232,8 +236,64 @@
             </div>
           </div>
           <div class="swiper-slide banner banner1">
-            <img src="../images/banner1.png" class="web" />
-            <img src="../images/banner1_mob.png" class="mob" />
+            <img src="../images/web_main_bg_02_960.png" class="web" />
+            <img src="../images/m_visual_02.png" class="mob" />
+            <div class="fontContainer">
+              <div class="bannerLargeFont">
+                <!-- PARADISE CASINO -->
+                <div>P</div>
+                <div>A</div>
+                <div>R</div>
+                <div>A</div>
+                <div>D</div>
+                <div>I</div>
+                <div>S</div>
+                <div>E</div>
+                <div>&nbsp;</div>
+                <div>C</div>
+                <div>A</div>
+                <div>S</div>
+                <div>I</div>
+                <div>N</div>
+                <div>O</div>
+              </div>
+              <div class="bannerSmallFont">
+                품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
+                색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide banner banner1">
+            <img src="../images/web_main_bg_03_960.png" class="web" />
+            <img src="../images/m_visual_03.png" class="mob" />
+            <div class="fontContainer">
+              <div class="bannerLargeFont">
+                <!-- PARADISE CASINO -->
+                <div>P</div>
+                <div>A</div>
+                <div>R</div>
+                <div>A</div>
+                <div>D</div>
+                <div>I</div>
+                <div>S</div>
+                <div>E</div>
+                <div>&nbsp;</div>
+                <div>C</div>
+                <div>A</div>
+                <div>S</div>
+                <div>I</div>
+                <div>N</div>
+                <div>O</div>
+              </div>
+              <div class="bannerSmallFont">
+                품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
+                색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide banner banner1">
+            <img src="../images/web_main_bg_04_960.png" class="web" />
+            <img src="../images/m_visual_04.png" class="mob" />
             <div class="fontContainer">
               <div class="bannerLargeFont">
                 <!-- PARADISE CASINO -->
@@ -507,6 +567,44 @@
         </div>
       </div>
       <!--입금신청 팝업 종료-->
+
+      <!--로그인 팝업 시작-->
+      <div class="popupContainer loginPopup">
+        <div class="popup">
+          <div class="goldTitle">
+            <span>로그인</span>
+            <a class="btnClose" onclick="closePopup(this);"><img src="../images/btn_close.png" /></a>
+          </div>
+          <article class="contents">
+            <div class="imgContainer">
+              <img src="../images/icon_dice.png" />
+            </div>
+            <div class="paradiseFont">파라다이스에 오신 것을 환영합니다.</div>
+            <div class="inputContainer">
+              <input type="text" name="" id="" placeholder="아이디" />
+              <div class="errorMessage">존재하지 않는 아이디입니다.</div>
+            </div>
+            <div class="inputContainer">
+              <input type="text" name="" id="" placeholder="비밀번호" />
+              <div class="errorMessage">비밀번호가 일치하지 않습니다.</div>
+            </div>
+            <div class="checkboxContainer">
+              <!-- <input type="checkbox" name="" id="chk_01" />
+              <label for="chk_01"></label>
+              <div>아이디 저장</div> -->
+
+              <label>
+                <input type="checkbox" name="checkbox" value="" />
+                <span>아이디 저장</span>
+              </label>
+            </div>
+          </article>
+          <div class="submitButtonContainer">
+            <button class="submitBtn goldButton">로그인</button>
+          </div>
+        </div>
+      </div>
+      <!--로그인 팝업 종료-->
       <!--슬롯 팝업 시작-->
       <div class="slotPopup popupContainer">
         <div class="popup">
@@ -524,35 +622,35 @@
             </ul>
             <div class="bannerContainer" id="tab1">
               <div class="bannerItem">
-                <img src="../images/banner_icon1.png" />
+                <img src="../images/playn'Go.png" />
                 <div class="hoverContainer">
                   <span>플레이엔고 슬롯</span>
                   <button class="go" href="#"></button>
                 </div>
               </div>
               <div class="bannerItem">
-                <img src="../images/banner_icon875.png" />
+                <img src="../images/pragmatic_play.png" />
                 <div class="hoverContainer">
                   <span>프라그마틱 플레이 슬롯</span>
                   <button class="go" href="#"></button>
                 </div>
               </div>
               <div class="bannerItem">
-                <img src="../images/banner_icon8752.png" />
+                <img src="../images/quickspin.png" />
                 <div class="hoverContainer">
                   <span>퀵스핀 슬롯</span>
                   <button class="go" href="#"></button>
                 </div>
               </div>
               <div class="bannerItem">
-                <img src="../images/banner_icon8754.png" />
+                <img src="../images/elk_studios.png" />
                 <div class="hoverContainer">
                   <span>이엘케이스튜디오 슬롯</span>
                   <button class="go" href="#"></button>
                 </div>
               </div>
               <div class="bannerItem">
-                <img src="../images/banner_icon8755.png" />
+                <img src="../images/microgaming.png" />
                 <div class="hoverContainer">
                   <span>마이크로게이밍 슬롯</span>
                   <button class="go" href="#"></button>
