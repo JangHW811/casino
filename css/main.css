@@ -648,6 +648,12 @@ body::-webkit-scrollbar {
   min-height: 126px;
   position: relative;
 }
+.slotPopup .bannerContainer .bannerItem.black {
+  background-color: black;
+}
+.slotPopup .bannerContainer .bannerItem.red {
+  background-color: #ad2016;
+}
 .slotPopup .bannerContainer .bannerItem:hover {
   border-radius: 12px;
   border: solid 2px #b77f57;
@@ -1404,9 +1410,9 @@ body::-webkit-scrollbar {
   }
   .slotPopup .bannerContainer .bannerItem > .hoverContainer > .go {
     margin-left: 5px;
-    border-radius: 10px;
-    width: 20px;
-    height: 20px;
+    border-radius: 13px;
+    width: 26px;
+    height: 26px;
   }
   .slotPopup .bannerContainer .bannerItem > .hoverContainer > .go::before {
     font-size: 8px;
