@@ -1,26 +1,2 @@
-@font-face {
-  font-family: 'NanumSquare';
-  src: url('../fonts/NanumSquareR.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'NanumSquare';
-  src: url('../fonts/NanumSquareB.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Bold.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@import url('http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700');
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);

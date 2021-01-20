@@ -366,7 +366,6 @@ body::-webkit-scrollbar {
 
 .whiteSmallFont {
   margin-top: 37px;
-  font-family: NanumSquareOTFR;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -819,7 +818,6 @@ body::-webkit-scrollbar {
 
 .popup .inputContainer .value .redMessage {
   margin-top: 9px;
-  font-family: NanumSquareOTFR;
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
