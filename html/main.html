@@ -42,7 +42,6 @@
       swiper.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlider = $(slick.$slides[currentSlide]);
         console.log('beforeChange', activeSlider);
-        animationInit(activeSlider);
       });
 
       var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
@@ -71,19 +70,12 @@
       animationArea.find('.dice1').addClass('dice1Animation');
       animationArea.find('.dice2').addClass('dice2Animation');
     }
-    //애니메이션 초기화
-    function animationInit(animationArea) {
-      animationArea.find('.bannerLargeFont > div').removeClass('showStepFont').css({ 'animation-delay': 'unset' });
-      animationArea.find('.bannerSmallFont').removeClass('fadeFont');
-      animationArea.find('.dice1').removeClass('dice1Animation');
-      animationArea.find('.dice2').removeClass('dice2Animation');
-    }
 
     $(document).ready(function () {
       var width = $(window).width();
       isMob = width < 640;
       handleSwiper();
-      animationStart($('.banner2'));
+      animationStart($('.firstAnimation'));
       resize();
       $('.leftContainer').on('click', '.gameGuide', function () {
         if (isMob) {
@@ -207,7 +199,35 @@
       </header>
       <section class="section">
         <div class="swiper-wrapper">
-          <div class="swiper-slide banner banner2">
+          <div class="swiper-slide banner banner1 firstAnimation">
+            <img src="../images/web_main_bg_04_960.png" class="web" />
+            <img src="../images/m_visual_04.png" class="mob" />
+            <div class="fontContainer">
+              <div class="bannerLargeFont">
+                <!-- PARADISE CASINO -->
+                <div>P</div>
+                <div>A</div>
+                <div>R</div>
+                <div>A</div>
+                <div>D</div>
+                <div>I</div>
+                <div>S</div>
+                <div>E</div>
+                <div>&nbsp;</div>
+                <div>C</div>
+                <div>A</div>
+                <div>S</div>
+                <div>I</div>
+                <div>N</div>
+                <div>O</div>
+              </div>
+              <div class="bannerSmallFont">
+                품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
+                색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide banner banner1">
             <img src="../images/web_main_bg_01_960px.png" class="web" />
             <img src="../images/m_visual_01.png" class="mob" />
             <div class="fontContainer">
@@ -266,34 +286,6 @@
           <div class="swiper-slide banner banner1">
             <img src="../images/web_main_bg_03_960.png" class="web" />
             <img src="../images/m_visual_03.png" class="mob" />
-            <div class="fontContainer">
-              <div class="bannerLargeFont">
-                <!-- PARADISE CASINO -->
-                <div>P</div>
-                <div>A</div>
-                <div>R</div>
-                <div>A</div>
-                <div>D</div>
-                <div>I</div>
-                <div>S</div>
-                <div>E</div>
-                <div>&nbsp;</div>
-                <div>C</div>
-                <div>A</div>
-                <div>S</div>
-                <div>I</div>
-                <div>N</div>
-                <div>O</div>
-              </div>
-              <div class="bannerSmallFont">
-                품격있는 서비스, 합리적인 게임 운영, 최첨단 시스템을 갖춘 한국 최대 외국인 전용 카지노 파라다이스 시티 카지노는
-                색다른 즐거움을 찾는 인들을 위한 프리미엄 놀이공간입니다.
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide banner banner1">
-            <img src="../images/web_main_bg_04_960.png" class="web" />
-            <img src="../images/m_visual_04.png" class="mob" />
             <div class="fontContainer">
               <div class="bannerLargeFont">
                 <!-- PARADISE CASINO -->
