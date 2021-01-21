@@ -62,7 +62,7 @@ body::-webkit-scrollbar {
 }
 .header .leftContainer .subMenu {
   display: none;
-  font-size: 9px;
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
