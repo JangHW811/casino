@@ -655,7 +655,7 @@ body::-webkit-scrollbar {
 }
 .slotPopup .bannerContainer .bannerItem:hover {
   border-radius: 12px;
-  border: solid 2px #b77f57;
+  border: solid 3px #b77f57;
 }
 .slotPopup .bannerContainer .bannerItem:hover::before {
   border-radius: 10px;
