@@ -157,6 +157,17 @@
       var activeTabId = $(li).data('activeTabId');
       $('#' + activeTabId).show();
     }
+
+    function shareTest() {
+      try {
+        window.navigator.share({
+          title: '제목', // 공유될 제목
+          url: 'http://www.google.com', // 공유될 URL
+        });
+      } catch (e) {
+        alert(e.toString());
+      }
+    }
   </script>
   <body>
     <article id="root">
@@ -170,7 +181,7 @@
               <li>
                 <span class="gameGuide" onclick="showSlot();">게임가이드</span>
                 <div class="subMenu">
-                  <div class="menu" onclick="showSlot(this);" data-active-tab-id="tab1">슬롯</div>
+                  <div class="menu" onclick="shareTest(this);" data-active-tab-id="tab1">공유테스트</div>
                   <div class="menu" onclick="showSlot(this);" data-active-tab-id="tab2">바카라</div>
                   <div class="menu" onclick="showSlot(this);" data-active-tab-id="tab3">룰렛</div>
                 </div>
